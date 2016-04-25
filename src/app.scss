@@ -1,0 +1,52 @@
+
+//
+// General
+//
+
+body {
+    background-color: #e9eaed;
+    font-size: 14px;
+    color: #333333;
+}
+
+.main-view {
+    margin: 0 auto;
+    width: 1097px;
+}
+
+//
+// Utils
+//
+
+.clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+.rub {
+  font-style: normal;
+
+  &:after {
+    content: '\20BD';
+  }
+  &.__bold {
+    font-weight: bold;
+  }
+}
+
+
+//
+// Layout helpers
+//
+
+.w_100p {
+  width: 100%;
+}
+.h_100p {
+  height: 100%;
+}

@@ -1,0 +1,114 @@
+<section class="row">
+    <div class="col-xs-12">
+        <header class="person-general__head">
+            <h1 class="person-general__head-title">
+                <icon class="person-general__info-group-icon" name="list"></icon>
+                <span>Общая информация</span>
+            </h1>
+            <a class="person-general__head-link" href="#" ng-click="person.toggleRecomendations()">Рекомендации верификатору</a>
+        </header>
+    </div>
+
+    <div class="col-xs-12">
+        <article class="person-general__recommendations" ng-if="person.recommendations">
+            <a href="#" class="person-general__recommendations-close" ng-click="person.toggleRecomendations()">
+                <icon name="cross-circle"></icon>
+            </a>
+
+            <div class="person-general__recommendations-negative">Отрицательные маркеры</div>
+            <p>Информация о семейном статусе и наличии иждивенцев не совпадает с информацией указанной в анкете клиента. В этом случае нужно уточнить эту информацию при разговоре.</p>
+            <div class="person-general__recommendations-positive">Положительные маркеры</div>
+            <p>Информация о семейном статусе и наличии иждивенцев совпадает с информацией указанной в Анкете Клиента.</p>
+        </article>
+    </div>
+
+    <div class="col-xs-7">
+        <div class="box">
+            <article class="person-general__info-group">
+                <div ng-repeat="city in person.cities" class="person-general__city">
+                    <icon class="person-general__info-group-icon" name="map-marker"></icon>
+                    <span>Живет в</span>
+                    <span ng-bind="::city"></span>
+                </div>
+                <div class="person-general__marriage">
+                    <icon class="person-general__info-group-icon" name="heart"></icon>
+                    <span ng-if="::person.marriageStatus[0] == 'married'">Состоит в браке</span>
+                    <span ng-if="::!person.marriageStatus.length">Не состоит в браке</span>
+                </div>
+            </article>
+
+            <article class="person-general__info-group">
+                <div class="person-general__edu">
+                    <icon class="person-general__info-group-icon" name="graduation-hat"></icon>
+                    <div ng-repeat="university in person.general.universities" class="person-general__edu-item">
+                        Учился в {{ ::university.name }}
+                    </div>
+                    <div class="person-general__edu-item person-general__edu-item_school">
+                        <span>Ранее:</span>
+                        <span ng-repeat="school in person.general.schools">
+                            <span ng-if="!$last">{{ ::school.name }},</span>
+                            <span ng-if="$last">{{ ::school.name }}.</span>
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="person-general__info-group">
+                <div class="person-general__jobs">
+                    <icon class="person-general__info-group-icon" name="briefcase"></icon>
+                    <div ng-repeat="job in person.jobs | orderBy:-'startDate'" class="person-general__jobs-item">
+                        <span>{{ ::job.position }},</span>
+                        <span>{{ ::job.name }}.</span>
+                        <span>{{ ::job.startDate * 1000 | date: 'MMM yyyy' }} - </span>
+                        <span ng-if="job.finishDate">{{ ::job.startDate * 1000 | date: 'MMM yyyy' }}</span>
+                        <span ng-if="!job.finishDate">н.в.</span>
+                    </div>
+                </div>
+                <div ng-if="person.salary.length" class="person-general__salary">
+                    <span class="rub person-general__salary-rub"></span>
+                    <div class="person-general__salary-item">
+                        <span>Желаемый доход:</span>
+                        <span ng-repeat="salary in person.salary">
+                            <span ng-if="!$last">{{ ::salary }},</span>
+                            <span ng-if="$last">{{ ::salary }}.</span>
+                        </span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="person-general__info-group">
+                <div class="person-general__devices">
+                    <icon class="person-general__info-group-icon" name="smartphone"></icon>
+                    <div class="person-general__devices-item">
+                        <span>Мобильные устройства:</span>
+                        <span ng-repeat="device in person.devices">
+                            <span ng-if="!$last">{{ ::device }},</span>
+                            <span ng-if="$last">{{ ::device }}.</span>
+                        </span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <div class="col-xs-4 col-xs-offset-1">
+        <article class="person-general__info-group">
+            <div class="person-general__phones">
+                <icon class="person-general__info-group-icon" name="phone-handset"></icon>
+                <div ng-repeat="phone in person.phones" class="person-general__phones-item" ng-bind="::phone"></div>
+            </div>
+
+            <div class="person-general__emails">
+                <icon class="person-general__info-group-icon" name="envelope"></icon>
+                <div ng-repeat="email in person.emails" class="person-general__emails-item" ng-bind="::email"></div>
+            </div>
+        </article>
+
+        <article class="person-general__info-group person-general__network">
+            <div ng-repeat="network in person.general.pages" class="person-general__network-item">
+                <icon class="person-general__info-group-icon" name="{{network.network}}"></icon>
+                <span ng-bind="::network.alias"></span>
+            </div>
+        </article>
+    </div>
+</section>

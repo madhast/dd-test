@@ -1,0 +1,24 @@
+<header class="person-header clearfix">
+
+    <div class="person-header__title">
+        <span ng-bind="::alias"></span>
+        <ng-pluralize count="::age"
+                      when="{
+                              '0': '',
+                              'one'  : '{} год',
+                              'few'  : '{} года',
+                              'many' : '{} лет',
+                              'other': '{} other'
+                            }">
+        </ng-pluralize>
+    </div>
+
+    <ul class="person-header__nav clearfix">
+        <li class="person-header__nav-item"><a href="" class="person-header__nav-item-lnk" ui-sref="person.general">Основное</a></li>
+        <li class="person-header__nav-item"><a href="" class="person-header__nav-item-lnk" ui-sref="person.friends">Друзья</a></li>
+        <li class="person-header__nav-item"><a href="" class="person-header__nav-item-lnk">Пункт 3</a></li>
+        <li class="person-header__nav-item"><a href="" class="person-header__nav-item-lnk">Пункт 4</a></li>
+        <li class="person-header__nav-item"><a href="" class="person-header__nav-item-lnk">Пункт 5</a></li>
+        <li class="person-header__nav-item"><a href="" class="person-header__nav-item-lnk">Пункт 6</a></li>
+    </ul>
+</header>

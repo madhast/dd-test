@@ -1,0 +1,106 @@
+.person-friends {
+  &__head {
+    padding: 0 14px;
+    border-bottom: 2px solid #cccccc;
+    background-color: #f6f7f8;
+    &-title {
+      display: inline-block;
+      margin: 0;
+      font-size: 22px;
+      line-height: 36px;
+      font-weight: normal; }
+    &-link {
+      padding-left: 16px;
+      font-size: 12px; } }
+  &__tab-nav {
+    list-style: none;
+    margin: 12px 0;
+    padding: 0;
+    &-item {
+      float: left;
+      margin-right: 18px;
+      &:last-child {
+        margin-right: 0; }
+      &_active {
+        & > .person-friends__tab-nav-lnk {
+          color: #000000;
+        } } }
+    &-lnk {
+      color: #3c5a96;
+      font-weight: 700;
+      text-decoration: none;
+      &:hover {
+        text-decoration: none; }
+      &:active {
+        text-decoration: none;
+        color: #3c5a96; } }
+    &-counter {
+      font-size: 12px; } }
+  &__table {
+    border: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+    border-spacing: 0;
+    border-collapse: collapse;
+    & > thead > tr > th,
+    & > tbody > tr > td {
+      border: 1px solid #ddd;
+      padding: 6px;
+      &:first-child {
+        border-left: none; }
+      &:last-child {
+        border-right: none; }
+    }
+    &-alias {
+      position: relative;
+      text-align: left;
+      &-text {
+        display: inline-block;
+        margin-right: 10px; } }
+    &-phone {
+      text-align: center; }
+    &-tag {
+      display: inline-block;
+      margin-right: 4px;
+      padding: 6px;
+      line-height: 8px;
+      font-size: 12px;
+      border-radius: 14px;
+      &-dot {
+        text-align: center;
+        & .person-friends__table-tag {
+          margin-right: 0; } }
+      &_referrer {
+        background-color: #990000;
+        color: #fff }
+      &_intimate {
+        background-color: #ff9900;
+        color: #555 }
+      &_relative {
+        background-color: #12a537;
+        color: #fff }
+      &_school {
+        background-color: #ffff00;
+        color: #555 }
+      &_geo {
+        background-color: #3f72eb;
+        color: #fff } }
+    &-icon {
+      font-size: 1.3em;
+      &_question {
+        margin-right: 10px;
+        vertical-align: text-top;
+        font-size: 0.9em;
+        cursor: pointer;} }
+  }
+  &__show-more {
+    padding: 10px 0;
+    text-align: center;
+    background-color: #f6f7f8;
+    border-top: 1px solid #cccccc;  }
+}
+.search-bar {
+  padding: 14px;
+  &__inp {
+    width: 50%; }
+}

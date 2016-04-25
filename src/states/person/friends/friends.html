@@ -1,0 +1,97 @@
+<section class="row">
+    <div class="col-xs-12">
+        <header class="person-friends__head">
+            <h1 class="person-friends__head-title">
+                <icon class="person-friends__info-group-icon" name="users"></icon>
+                <span>Друзья, родственники, коллеги, однокласники</span>
+            </h1>
+
+            <ul class="person-friends__tab-nav clearfix">
+                <li class="person-friends__tab-nav-item" ng-class="{
+                        'person-friends__tab-nav-item_active': person.activeFilterTab === 'all'
+                    }">
+                    <a class="person-friends__tab-nav-lnk" href="#" ng-click="person.setActiveFilterTab('all')">Все</a>
+                    <span class="person-friends__tab-nav-counter" ng-bind="::person.filterTabCounter('all')"></span>
+                </li>
+                <li class="person-friends__tab-nav-item" ng-class="{
+                        'person-friends__tab-nav-item_active': person.activeFilterTab === 'phone'
+                    }">
+                    <a class="person-friends__tab-nav-lnk" href="#" ng-click="person.setActiveFilterTab('phone')">С телефоном</a>
+                    <span class="person-friends__tab-nav-counter" ng-bind="::person.filterTabCounter('phone')"></span>
+                <li class="person-friends__tab-nav-item" ng-class="{
+                        'person-friends__tab-nav-item_active': person.activeFilterTab === 'relative'
+                    }">
+                    <a class="person-friends__tab-nav-lnk" href="#" ng-click="person.setActiveFilterTab('relative')">Родственники</a>
+                    <span class="person-friends__tab-nav-counter" ng-bind="::person.filterTabCounter('relative')"></span>
+                </li>
+                <li class="person-friends__tab-nav-item" ng-class="{
+                        'person-friends__tab-nav-item_active': person.activeFilterTab === 'school'
+                    }">
+                    <a class="person-friends__tab-nav-lnk" href="#" ng-click="person.setActiveFilterTab('school')">Одноклассники</a>
+                    <span class="person-friends__tab-nav-counter" ng-bind="::person.filterTabCounter('school')"></span>
+                </li>
+            </ul>
+        </header>
+
+        <div class="search-bar">
+            <input class="search-bar__inp" type="text" ng-model="search" placeholder="Введите имя, фамилию или номер телефона">
+        </div>
+
+        <table class="person-friends__table w_100p">
+            <thead>
+                <tr>
+                    <th class="person-friends__table-alias">Аккаунт</th>
+                    <th class="person-friends__table-phone">Телефон</th>
+                    <th></th>
+                    <th>
+                        <icon class="person-friends__table-icon" name="users"></icon>
+                    </th>
+                    <th>
+                        <icon class="person-friends__table-icon" name="map-marker"></icon>
+                    </th>
+                    <th>
+                        <icon class="person-friends__table-icon" name="cog"></icon>
+                    </th>
+                    <th>
+                        <icon class="person-friends__table-icon" name="graduation-hat"></icon>
+                    </th>
+                    <th>
+                        <icon class="person-friends__table-icon" name="earth"></icon>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="friend in person.friends | searchInNamesAndPhones:search | tabFilter:person.activeFilterTab">
+                    <td class="person-friends__table-alias">
+                        <friends-details friend="friend"></friends-details>
+                    </td>
+                    <td class="person-friends__table-phone">
+                        <div ng-repeat="contact in friend.contacts" ng-bind="::contact"></div>
+                    </td>
+                    <td>
+                        <div class="person-friends__table-tag"
+                             ng-repeat="tag in friend.tags"
+                             ng-bind="::tag.value"
+                             ng-class="{
+                                'person-friends__table-tag_relative': tag.kind === 'relative',
+                                'person-friends__table-tag_referrer': tag.kind === 'referrer',
+                                'person-friends__table-tag_intimate': tag.kind === 'intimate',
+                                'person-friends__table-tag_school': tag.kind === 'school',
+                                'person-friends__table-tag_geo': tag.kind === 'geo'
+                             }">
+                        </div>
+                    </td>
+                    <td class="person-friends__table-tag-dot"><tag-marker tags="friend.tags" current="relative"></tag-marker></td>
+                    <td class="person-friends__table-tag-dot"><tag-marker tags="friend.tags" current="geo"></tag-marker></td>
+                    <td class="person-friends__table-tag-dot"><tag-marker tags="friend.tags" current="referrer"></tag-marker></td>
+                    <td class="person-friends__table-tag-dot"><tag-marker tags="friend.tags" current="school"></tag-marker></td>
+                    <td class="person-friends__table-tag-dot"><tag-marker tags="friend.tags" current="intimate"></tag-marker></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="person-friends__show-more">
+            <a href="#">Показать еще 100500</a>
+        </div>
+    </div>
+</section>

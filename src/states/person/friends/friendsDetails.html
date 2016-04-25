@@ -1,0 +1,9 @@
+<div class="friends-details">
+    <icon ng-click="toggleShowDetails()" class="person-friends__table-icon_question" name="question-circle"></icon>
+    <div class="person-friends__table-alias-text" ng-bind="::friend.alias"></div>
+    <icon class="person-friends__table-icon" name="{{ ::friend.network }}"></icon>
+
+    <div ng-if="showDetails" class="friends-details__container">
+        Детальная информация :)
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="person-photo">
+    <a href="#" ng-click="toggleFullScreen()">
+        <img class="person-photo__img" ng-src="{{ url + '.jpg' }}" src="" alt="" />
+    </a>
+
+    <div class="person-photo__full-screen"
+         ng-if="fullScreen"
+         ng-click="toggleFullScreen()">
+        <div class="row center-xs middle-xs h_100p">
+            <div class="col-xs">
+                <div class="person-photo__full-screen-border">
+                    <img class="person-photo__full-screen-img" src="" alt="" ng-src="{{ url + '.jpg' }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

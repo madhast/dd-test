@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-xs-12">
+        <person-header alias="::person.data.bio.alias"
+                        birth-date="::person.data.bio.birthDate">
+        </person-header>
+    </div>
+    <div class="col-xs-3">
+        <person-photo url="::person.data.bio.avatarURL"></person-photo>
+    </div>
+    <div class="col-xs-9">
+        <div class="person-content" ui-view></div>
+    </div>
+</div>

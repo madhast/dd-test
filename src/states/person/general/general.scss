@@ -1,0 +1,154 @@
+.person-general {
+  &__head {
+    padding: 0 14px;
+    border-bottom: 2px solid #ccc;
+    background-color: #f6f7f8;
+
+    &-title {
+      display: inline-block;
+      margin: 0;
+      font-size: 22px;
+      line-height: 36px;
+      font-weight: normal;
+    }
+    &-link {
+      padding-left: 16px;
+      font-size: 12px;
+    }
+  }
+
+  &__recommendations {
+    position: relative;
+    margin: 20px 14px 0;
+    padding: 14px 16px;
+    background-color: #f6f7f8;
+
+    &-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 18px;
+    }
+    &-negative {
+      color: #ff0000;
+    }
+    &-positive {
+      color: #008000;
+    }
+  }
+
+  &__info-group {
+    border-top: 1px solid #cccccc;
+    margin: 8px 18px 8px;
+    padding: 14px 0;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &-icon {
+      margin-right: 4px;
+      font-size: 1.3em;
+    }
+  }
+
+  &__phones {
+    position: relative;
+    margin-bottom: 18px;
+
+    > .person-general__info-group-icon {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &-item {
+      margin-left: 30px;
+    }
+  }
+
+  &__emails {
+    position: relative;
+
+    > .person-general__info-group-icon {
+      position: absolute;
+      top: -4px;
+      left: 0;
+    }
+
+    &-item {
+      margin-left: 30px;
+    }
+  }
+
+  &__edu {
+    position: relative;
+
+    > .person-general__info-group-icon {
+      position: absolute;
+      top: -4px;
+      left: 0;
+    }
+
+    &-item {
+      margin-left: 30px;
+
+      &_school {
+        margin-top: 18px;
+      }
+    }
+  }
+
+  &__jobs {
+    position: relative;
+
+    > .person-general__info-group-icon {
+      position: absolute;
+      top: -4px;
+      left: 0;
+    }
+
+    &-item {
+      margin-left: 30px;
+    }
+  }
+
+  &__salary {
+    position: relative;
+    margin-top: 18px;
+
+    &-item {
+      margin-left: 30px;
+    }
+    &-rub {
+      position: absolute;
+      top: -4px;
+      left: 4px;
+      font-size: 1.4em;
+    }
+  }
+
+  &__marriage {
+    margin-top: 18px;
+  }
+
+  &__devices {
+    position: relative;
+
+    > .person-general__info-group-icon {
+      position: absolute;
+      top: -4px;
+      left: 0;
+    }
+
+    &-item {
+      margin-left: 30px;
+    }
+  }
+
+  &__network {
+    &-item {
+      margin-bottom: 8px;
+    }
+  }
+}
