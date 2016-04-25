@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "develop": "webpack-dev-server --progress --colors --inline --history-api-fallback --content-base build/ --output-public-path /"
+    "dev": "webpack-dev-server --progress --colors --inline --history-api-fallback --content-base build/ --output-public-path /"
   },
   "dependencies": {
     "angular": "^1.5.3",
