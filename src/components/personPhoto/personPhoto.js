@@ -25,7 +25,7 @@ function personPhoto () {
     }
 
     function lnk (scope, elem, attrs) {
-        // console.log('component.personPhoto lnk');
+        
     }
 }
 

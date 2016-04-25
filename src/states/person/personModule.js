@@ -14,7 +14,7 @@ import personFriends    from './friends/friendsModule'
 
 import personHeader     from '../../components/personHeader/personHeader'
 import personPhoto      from '../../components/personPhoto/personPhoto'
-// import icon             from '../../components/icon/icon'
+
 
 export default angular.module('person', [
         angularUiRouter,

@@ -30,7 +30,7 @@ function personHeader ($filter) {
     }
 
     function lnk () {
-        // console.log('component.personHeader lnk');
+        
     }
 }
 

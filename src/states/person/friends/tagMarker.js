@@ -1,5 +1,4 @@
 
-// import angular      from 'angular';
 import templateUrl from './tagMarker.html';
 
 

@@ -23,23 +23,10 @@ export default class GeneralCtr {
         this.phones = personSrv.agregatePhones(this.general.pages);
         this.salary = personSrv.agregateSalary(this.general.pages);
         this.jobs = personSrv.agregateJobs(this.general.pages);
-
-        console.log('marriageStatus: ', this.marriageStatus);
-        console.log('education: ', this.education);
-        console.log('devices: ', this.devices);
-        console.log('cities: ', this.cities);
-        console.log('emails: ', this.emails);
-        console.log('phones: ', this.phones);
-        console.log('salary: ', this.salary);
-        console.log('jobs: ', this.jobs);
-
-        console.log('universities: ', this.general.universities);
-        console.log('schools: ', this.general.schools);
     }
 
     toggleRecomendations () {
         this.recommendations = !this.recommendations;
     }
 }
-
 GeneralCtr.$inject = ['personResource', 'personSrv', 'generalResolve'];
